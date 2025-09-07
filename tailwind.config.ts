@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -46,6 +48,15 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        // Status colors for water levels
+        status: {
+          good: "hsl(var(--status-good))",
+          "good-foreground": "hsl(var(--status-good-foreground))",
+          moderate: "hsl(var(--status-moderate))",
+          "moderate-foreground": "hsl(var(--status-moderate-foreground))",
+          critical: "hsl(var(--status-critical))",
+          "critical-foreground": "hsl(var(--status-critical-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -80,10 +91,52 @@ export default {
             height: "0",
           },
         },
+        // Water-themed animations
+        "water-fill": {
+          "0%": {
+            transform: "translateY(100%)",
+            opacity: "0.6",
+          },
+          "100%": {
+            transform: "translateY(0%)",
+            opacity: "0.9",
+          },
+        },
+        "ripple": {
+          "0%": {
+            transform: "scale(0)",
+            opacity: "0.8",
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "0",
+          },
+        },
+        "pulse-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 5px hsl(var(--primary) / 0.5)",
+          },
+          "50%": {
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.6)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "water-fill": "water-fill 2s ease-out",
+        "ripple": "ripple 1s ease-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-water": "var(--gradient-water)",
+        "gradient-depth": "var(--gradient-depth)",
+        "gradient-surface": "var(--gradient-surface)",
+      },
+      boxShadow: {
+        "water": "var(--shadow-water)",
+        "status": "var(--shadow-status)",
+        "card": "var(--shadow-card)",
       },
     },
   },
