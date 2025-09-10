@@ -47,8 +47,8 @@ export const InteractiveMap = () => {
     const moderateIcon = createCustomIcon('hsl(48, 96%, 53%)');
     const criticalIcon = createCustomIcon('hsl(0, 84%, 60%)');
 
-    // Add stations to map (showing first 100 for performance)
-    const displayStations = allStations.slice(0, 100);
+    // Add stations to map (showing first 300 for better coverage)
+    const displayStations = allStations.slice(0, 300);
     
     displayStations.forEach(station => {
       let icon;
